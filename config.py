@@ -12,7 +12,6 @@ class Config(pydantic_settings.BaseSettings):
     platform_name: str = os.getenv('PLATFORM_NAME')
     platform_version: str = os.getenv('PLATFORM_VERSION', '9.0')
     device_name: str = os.getenv('DEVICE_NAME')
-    app_wait_activity: str = os.getenv('APP_WAIT_ACTIVITY')
     load_dotenv(dotenv_path=abs_path_from_project('.env.credentials'))
     login: str = os.getenv('LOGIN')
     accessKey: str = os.getenv('ACCESS_KEY')
@@ -25,20 +24,17 @@ class Config(pydantic_settings.BaseSettings):
             options.set_capability('remote_url', self.remote_url)
             options.set_capability('platformName', self.platform_name)
             options.set_capability('deviceName', self.device_name)
-            options.set_capability('appWaitActivity', self.app_wait_activity)
             options.set_capability('app', abs_path_from_project(self.app))
         elif context == 'local_device':
             options.set_capability('remote_url', self.remote_url)
             options.set_capability('platformName', self.platform_name)
             options.set_capability('deviceName', self.device_name)
-            options.set_capability('appWaitActivity', self.app_wait_activity)
             options.set_capability('app', abs_path_from_project(self.app))
         elif context == 'browserstack':
             options.set_capability('remote_url', self.remote_url)
             options.set_capability('platformName', self.platform_name)
             options.set_capability('platformName', self.platform_version)
             options.set_capability('deviceName', self.device_name)
-            options.set_capability('appWaitActivity', self.app_wait_activity)
             options.set_capability('app', self.app)
             options.set_capability(
                 'bstack:options', {
