@@ -1,13 +1,35 @@
+import os
+
 import pytest
 from appium import webdriver
+from dotenv import load_dotenv
 from selene import browser
 
-from config import config_object
+
+def pytest_addoption(parser):
+    parser.addoption(
+        '--context',
+        default='emulator',
+        help='Specify the test context'
+    )
+
+
+@pytest.fixture
+def context(request):
+    return request.config.getoption('--context')
 
 
 @pytest.fixture(scope='function', autouse=True)
-def mobile_management():
-    options = config_object.to_driver_options()
+def mobile_management(context):
+    env_file_path = f'.env.{context}'
+    if os.path.exists(env_file_path):
+        load_dotenv(dotenv_path=env_file_path)
+    else:
+        print(f'Warning: Configuration file "{env_file_path}" not found.')
+
+    from config import config_object
+
+    options = config_object.to_driver_options(context)
     browser.config.driver = webdriver.Remote(command_executor=config_object.remote_url, options=options)
 
     yield
