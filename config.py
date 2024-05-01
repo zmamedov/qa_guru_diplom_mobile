@@ -4,7 +4,7 @@ import pydantic_settings
 from appium.options.android import UiAutomator2Options
 from dotenv import load_dotenv
 
-from qa_guru_diplom_mobile.utils.path import abs_path_from_project
+from telegram_mobile_test_project.utils.path import abs_path_from_project
 
 
 class Config(pydantic_settings.BaseSettings):

@@ -5,7 +5,7 @@ from appium import webdriver
 from dotenv import load_dotenv
 from selene import browser
 
-from qa_guru_diplom_mobile.utils import attach
+from telegram_mobile_test_project.utils import attach
 
 
 def pytest_addoption(parser):
