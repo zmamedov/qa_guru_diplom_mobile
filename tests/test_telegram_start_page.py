@@ -23,7 +23,7 @@ def test_start_messaging():
         browser.element((AppiumBy.ID, 'com.android.packageinstaller:id/permission_deny_button')).click()
 
     with allure.step('Page for filling phone number is displaying.'):
-        browser.element((AppiumBy.ID, 'new UiSelector().text("Your phone number")')).should(
+        browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Your phone number")')).should(
             have.exact_text('Your phone number'))
 
 

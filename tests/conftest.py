@@ -36,11 +36,11 @@ def mobile_management(context):
     with allure.step('Setup app session'):
         browser.config.driver = webdriver.Remote(command_executor=config_object.remote_url, options=options)
 
+    yield
+
     attach.add_screenshot()
     attach.add_xml()
     session_id = browser.driver.session_id
-
-    yield
 
     with allure.step('Tear down app session with id' + session_id):
         browser.quit()
