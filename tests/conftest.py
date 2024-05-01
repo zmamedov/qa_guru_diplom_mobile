@@ -1,5 +1,5 @@
 import os
-
+import allure
 import pytest
 from appium import webdriver
 from dotenv import load_dotenv
@@ -30,8 +30,13 @@ def mobile_management(context):
     from config import config_object
 
     options = config_object.to_driver_options(context)
-    browser.config.driver = webdriver.Remote(command_executor=config_object.remote_url, options=options)
+
+    with allure.step('Setup app session'):
+        browser.config.driver = webdriver.Remote(command_executor=config_object.remote_url, options=options)
 
     yield
 
-    browser.quit()
+    session_id = browser.driver.session_id
+
+    with allure.step('Tear down app session with id' + session_id):
+        browser.quit()
