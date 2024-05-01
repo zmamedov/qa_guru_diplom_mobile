@@ -5,6 +5,8 @@ from appium import webdriver
 from dotenv import load_dotenv
 from selene import browser
 
+from qa_guru_diplom_mobile.utils import attach
+
 
 def pytest_addoption(parser):
     parser.addoption(
@@ -34,9 +36,14 @@ def mobile_management(context):
     with allure.step('Setup app session'):
         browser.config.driver = webdriver.Remote(command_executor=config_object.remote_url, options=options)
 
-    yield
-
+    attach.add_screenshot()
+    attach.add_xml()
     session_id = browser.driver.session_id
+
+    yield
 
     with allure.step('Tear down app session with id' + session_id):
         browser.quit()
+
+    if context == 'bstack':
+        attach.add_video(session_id)
