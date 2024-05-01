@@ -1,8 +1,15 @@
 import allure
+from allure_commons.types import Severity
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
 
 
+@allure.title('Click the button "Start Messaging"')
+@allure.tag('mobile')
+@allure.severity(Severity.CRITICAL)
+@allure.label('owner', 'zmamedov')
+@allure.feature('Elements on start page')
+@allure.story('Start Page')
 def test_start_messaging():
     with allure.step('Open start page of Telegram.'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Telegram")')).should(
@@ -20,6 +27,12 @@ def test_start_messaging():
             have.exact_text('Your phone number'))
 
 
+@allure.title('Change the theme in the Telegram')
+@allure.tag('mobile')
+@allure.severity(Severity.NORMAL)
+@allure.label('owner', 'zmamedov')
+@allure.feature('Elements on start page')
+@allure.story('Start Page')
 def test_switch_theme():
     with allure.step('Open start page of Telegram.'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Telegram")')).should(
@@ -31,6 +44,12 @@ def test_switch_theme():
         browser.element((AppiumBy.CLASS_NAME, 'android.widget.ImageView')).click()
 
 
+@allure.title('Type the phone number')
+@allure.tag('mobile')
+@allure.severity(Severity.CRITICAL)
+@allure.label('owner', 'zmamedov')
+@allure.feature('Elements on start page')
+@allure.story('Start Page')
 def test_type_phone_number():
     with allure.step('Click the button "Start Messaging".'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Start Messaging")')).click()
