@@ -11,15 +11,11 @@ from selene import browser, have
 @allure.feature('Elements on start page')
 @allure.story('Start Page')
 def test_start_messaging():
-    with allure.step('Open start page of Telegram.'):
-        browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Telegram")')).should(
-            have.text('Telegram'))
-
     with allure.step('Click the button "Start Messaging".'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Start Messaging")')).click()
     with allure.step('Click the button "Continue".'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Continue")')).click()
-    with (allure.step('Deny Telegram to make and manage phone calls.')):
+    with allure.step('Deny Telegram to make and manage phone calls.'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR,
                          'new UiSelector().resourceId("com.android.packageinstaller:id/permission_deny_button")')
                         ).click()

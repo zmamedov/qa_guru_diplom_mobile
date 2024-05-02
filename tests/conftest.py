@@ -45,5 +45,5 @@ def mobile_management(context):
     with allure.step('Tear down app session with id' + session_id):
         browser.quit()
 
-    if context == 'bstack':
+    if context == 'browserstack':
         attach.add_video(session_id)
