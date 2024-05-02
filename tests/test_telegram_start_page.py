@@ -21,7 +21,7 @@ def test_start_messaging():
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Continue")')).click()
     with (allure.step('Deny Telegram to make and manage phone calls.')):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR,
-                         'new UiSelector().resourceId("com.android.permissioncontroller:id/permission_deny_button")')
+                         'new UiSelector().resourceId("com.android.packageinstaller:id/permission_deny_button")')
                         ).click()
 
     with allure.step('Page for filling phone number is displaying.'):
@@ -57,7 +57,7 @@ def test_type_phone_number():
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Continue")')).click()
     with allure.step('Deny Telegram to make and manage phone calls.'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR,
-                         'new UiSelector().resourceId("com.android.permissioncontroller:id/permission_deny_button")')
+                         'new UiSelector().resourceId("com.android.packageinstaller:id/permission_deny_button")')
                         ).click()
     with allure.step('Click on list of values "Country".'):
         browser.element(
