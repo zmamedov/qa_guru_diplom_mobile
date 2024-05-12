@@ -16,9 +16,10 @@ def add_xml():
 
 
 def add_video(session_id):
+    from config import config_object
     browserstack_session = requests.get(
         url=f'https://api.browserstack.com/app-automate/sessions/{session_id}.json',
-        auth=(os.getenv('USER_NAME'), os.getenv('ACCESS_KEY'))
+        auth=(config_object.login, config_object.accessKey)
     ).json()
     video_url = browserstack_session['automation_session']['video_url']
 
