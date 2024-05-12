@@ -4,7 +4,7 @@
 
 ---
 ### Список проверок, реализованных в автотестах
-1. Нажатие на кнопку "Start messaging" а стартовой странице.
+1. Нажатие на кнопку "Start messaging" на стартовой странице.
 2. Переключение темы со светлой на темную.
 3. Ввод номера телефона.
 
@@ -40,6 +40,12 @@
 ### Allure отчет
 
 ![allure_report main page](pictures/allure_report_main_page.png)
+
+---
+
+### Уведомления в Телеграм
+
+![telegram_notification](pictures/tg_notification.png)
 
 ---
 
