@@ -3,6 +3,8 @@ from allure_commons.types import Severity
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have
 
+from telegram_mobile_test_project.utils.helper import is_pop_up_message
+
 
 @allure.title('Click the button "Start Messaging"')
 @allure.tag('mobile')
@@ -14,11 +16,12 @@ def test_start_messaging():
     with allure.step('Click the button "Start Messaging".'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Start Messaging")')).click()
     with allure.step('Click the button "Continue".'):
-        browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Continue")')).click()
+        is_pop_up_message(css_locator=(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Continue")'))
     with allure.step('Deny Telegram to make and manage phone calls.'):
-        browser.element((AppiumBy.ANDROID_UIAUTOMATOR,
-                         'new UiSelector().resourceId("com.android.packageinstaller:id/permission_deny_button")')
-                        ).click()
+        is_pop_up_message(css_locator=
+                          (AppiumBy.ANDROID_UIAUTOMATOR,
+                           'new UiSelector().resourceId("com.android.packageinstaller:id/permission_deny_button")')
+                          )
 
     with allure.step('Page for filling phone number is displaying.'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Your phone number")')).should(
@@ -50,11 +53,12 @@ def test_type_phone_number():
     with allure.step('Click the button "Start Messaging".'):
         browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Start Messaging")')).click()
     with allure.step('Click the button "Continue".'):
-        browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Continue")')).click()
+        is_pop_up_message(css_locator=(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Continue")'))
     with allure.step('Deny Telegram to make and manage phone calls.'):
-        browser.element((AppiumBy.ANDROID_UIAUTOMATOR,
-                         'new UiSelector().resourceId("com.android.packageinstaller:id/permission_deny_button")')
-                        ).click()
+        is_pop_up_message(css_locator=
+                          (AppiumBy.ANDROID_UIAUTOMATOR,
+                           'new UiSelector().resourceId("com.android.packageinstaller:id/permission_deny_button")')
+                          )
     with allure.step('Click on list of values "Country".'):
         browser.element(
             (AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().className("android.widget.TextView").instance(2)')).click()
