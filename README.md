@@ -11,7 +11,7 @@
 ---
 
 ### Используемые инструменты
-<img title="Python" src="pictures/icons/python.svg" height="40" width="40"/> <img title="Pytest" src="pictures/icons/pytest.svg" height="40" width="40"/> <img title="Allure Report" src="pictures/icons/allure_report.png" height="40" width="40"/> <img title="GitHub" src="pictures/icons/github.svg" height="40" width="40"/> <img title="BrowserStack" src="pictures/icons/browserstack.svg" height="40" width="40"/> <img title="Selene" src="pictures/icons/selene.png" height="40" width="40"/> <img title="Pycharm" src="pictures/icons/pycharm-original.svg" height="40" width="40"/> <img title="Appium" src="pictures/icons/appium.svg" height="40" width="40"/> <img title="Jenkins" src="pictures/icons/jenkins-original.svg" height="40" width="40"/>
+<img title="Python" src="pictures/icons/python.svg" height="40" width="40"/> <img title="Pytest" src="pictures/icons/pytest.svg" height="40" width="40"/> <img title="Allure Report" src="pictures/icons/allure_report.png" height="40" width="40"/> <img title="GitHub" src="pictures/icons/github.svg" height="40" width="40"/> <img title="BrowserStack" src="pictures/icons/browserstack.svg" height="40" width="40"/> <img title="Selene" src="pictures/icons/selene.png" height="40" width="40"/> <img title="Pycharm" src="pictures/icons/pycharm-original.svg" height="40" width="40"/> <img title="Appium" src="pictures/icons/appium.svg" height="40" width="40"/> <img title="Jenkins" src="pictures/icons/jenkins-original.svg" height="40" width="40"/> <img title="Jira" src="pictures/icons/jira.svg" height="40" width="40"/>
 
 ---
 
@@ -48,6 +48,13 @@
 > [Job #3993 zmamedov-qa_guru_telegram_mobile_test](https://allure.autotests.cloud/project/4223/jobs)
 
 ![allure_testops job](pictures/allure_testops_job.png)
+
+---
+
+### Интеграция с Jira
+> [Задача в Jira](https://jira.autotests.cloud/browse/HOMEWORK-1234)
+ 
+![jira task](pictures/jira_task.png)
 
 ---
 
